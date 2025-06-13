@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Шаблоны ОМСК</title>
+
+    <!-- bootstrap4 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- bootstrap4 -->
+
+  </head>
+  <body>
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Корректировка
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
+<div class="alert alert-primary center container mt-3" role="alert">
+<div class="input-group">
+    <span class="input-group-text">ПУ №
+  <input type="text" style="width: 100px" id="PU">; Дата
+  <input class="thisDate" oninput="formatDate(this)" type="text" maxlength="10" placeholder="ХХ.ХХ.ХХХХ" style="width: 90px" id="cDate">; Актуальные показания То
+  <input type="text" style="width: 60px" id="tT0"> ; Т1 
+  <input type="text" style="width: 60px" id="tT1"> ; Т2 
+  <input type="text" style="width: 60px" id="tT2"> ; Т3
+  <input type="text" style="width: 60px" id="tT3"> ; предыдущие показания неверны.
+    </span><span class="input-group-text">Просьба принять в расчет! Тел.:
+  <input type="phone" style="width: 80px" id="tel"> ;
+    </span>
+</div>
+ <button type="button" class="btn btn-primary mt-2" onclick="fnCopy1()">Скопировать</button>
+</div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Письмо на РГ
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+<div class="container-fluid">
+  <div class="alert alert-primary center container mt-3 container mt-3" role="alert">
+<label>Добрый день!</label>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">В КЦ обратился Клиент:</span>
+  </div>
+  <input type="text" class="form-control" id="RG1string1">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Лицевой счет:</span>
+  </div>
+  <input type="text" class="form-control" id="RG1string2">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Адрес:</span>
+  </div>
+  <input type="text" class="form-control" id="RG1string3">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">ФИО:</span>
+  </div>
+  <input type="text" class="form-control" id="RG1string4">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Контактный номер:</span>
+  </div>
+  <input type="text" class="form-control" id="RG1string5">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Суть обращения:</span>
+  </div>
+  <input type="text" class="form-control" id="RG1string6">
+</div>
+
+ <button type="button" class="btn btn-primary" onclick="send_mail('RG1')">Скопировать</button>
+
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThird" aria-expanded="false" aria-controls="collapseThird">
+          Розыск платежа \ оплата ДЗ
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThird" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+<div class="container-fluid">
+  <div class="alert alert-primary center container mt-3" role="alert">
+
+<label>Заявка на розыск платежа</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Дата оплаты:</span>
+  </div>
+  <input type="text" class="form-control" id="RPstring1">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Сумма оплаты по чеку:</span>
+  </div>
+  <input type="text" class="form-control" id="RPstring2">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Оплата по:</span>
+  </div>
+  <input type="text" class="form-control" id="RPstring3" value="всем коммунальным услугам">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Система:</span>
+  </div>
+  <input type="text" class="form-control" id="RPstring4">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Идентификатор платежного поручения:</span>
+  </div>
+  <input type="text" class="form-control" id="RPstring5">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Контактный номер для связи:</span>
+  </div>
+  <input type="text" class="form-control" id="RPstring6">
+</div>
+ <button type="button" class="btn btn-primary" onclick="send_mail('RP')">Скопировать</button><br>
+
+<label class="mt-5">Клиент произвел оплату задолженности!</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Дата платежа:</span>
+  </div>
+  <input type="text" class="form-control" id="opl_DZstring1">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Сумма платежа:</span>
+  </div>
+  <input type="text" class="form-control" id="opl_DZstring2">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Система:</span>
+  </div>
+  <input type="text" class="form-control" id="opl_DZstring3">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Оплата по:</span>
+  </div>
+  <input type="text" class="form-control" id="opl_DZstring4" value="всем коммунальным услугам">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Контактный номер:</span>
+  </div>
+  <input type="text" class="form-control" id="opl_DZstring5">
+</div>
+
+ <button type="button" class="btn btn-primary" onclick="send_mail('opl_DZ')">Скопировать</button>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Обращение по ПУ ЭЭ
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+<div class="container-fluid">
+  <div class="alert alert-primary center container mt-3" role="alert">
+
+<label>Со слов клиента ПУ  Э/Э не исправен, требуется консультация специалиста и тех. осмотр.</label>
+<div class="input-group mb-2">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Kонтактный номер:</span>
+  </div>
+  <input type="text" class="form-control" id="PUstring1">
+</div>
+ <button type="button" class="btn btn-primary" onclick="send_mail('PU1')">Скопировать</button><br>
+
+<label class="mt-4">Заявка на замену ПУ Э/Э не отработана более 6 месяцев! Клиент ожидает согласование сроков замены и обратной связи.</label>
+<div class="input-group mb-2">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Kонтактный номер:</span>
+  </div>
+  <input type="text" class="form-control" id="PUstring2">
+</div>
+ <button type="button" class="btn btn-primary" onclick="send_mail('PU2')">Скопировать</button><br>
+
+<label class="mt-4">Клиенту необходимо снять пломбу с ПУ ЭЭ.</label>
+<div class="input-group mb-2">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Kонтактный номер:</span>
+  </div>
+  <input type="text" class="form-control" id="PUstring3">
+</div>
+ <button type="button" class="btn btn-primary" onclick="send_mail('PU3')">Скопировать</button>
+
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </body>
+  <script type="text/javascript">
+
+    //Корректировка
+    function fnCopy1() {
+      if (tT3.value == '' && tT0.value== '') {
+       navigator.clipboard.writeText(`ПУ: №${PU.value} ; Дата: ${cDate.value} ; Актуальные показания: T1 ${tT1.value} ; T2 ${tT2.value} ; Предыдущие показания неверны. Просьба принять в расчет! Тел.: ${tel.value}`)
+      }
+     else if (tT0.value == '') {
+       navigator.clipboard.writeText(`ПУ: №${PU.value} ; Дата: ${cDate.value} ; Актуальные показания: T1 ${tT1.value} ; T2 ${tT2.value} ; T3 ${tT3.value} ; Предыдущие показания неверны. Просьба принять в расчет! Тел.: ${tel.value}`)
+     }
+      else {
+       navigator.clipboard.writeText(`ПУ: №${PU.value} ; Дата: ${cDate.value} ; Актуальные показания: T0 ${tT0.value} ; Предыдущие показания неверны. Просьба принять в расчет! Тел.: ${tel.value}`)
+      }
+    }
+    //Корректировка
+
+    //Письма
+    function send_mail(arg) {
+    var send_mail_arr = {
+      RG1 : `Добрый день!
+В КЦ обратился Клиент: ${RG1string1.value}
+Лицевой счет: ${RG1string2.value}
+Адрес: ${RG1string3.value}
+ФИО: ${RG1string4.value}
+Контактный номер: ${RG1string5.value}
+Суть обращения: ${RG1string6.value}`,
+      RP : `Заявка на розыск платежа.
+Дата оплаты: ${RPstring1.value}
+Сумма оплаты по чеку: ${RPstring2.value}
+Оплата по: ${RPstring3.value}
+Система: ${RPstring4.value}
+Идентификатор платежного поручения: ${RPstring5.value}
+Контактный номер для связи: ${RPstring6.value}. 
+Клиент просит найти и прогрузить данные о платеже.`,
+      opl_DZ : `Клиент произвел оплату задолженности!
+Дата платежа: ${opl_DZstring1.value}
+Сумма платежа: ${opl_DZstring2.value}
+Система: ${opl_DZstring3.value}
+Оплата по: ${opl_DZstring4.value}
+Контактный номер: ${opl_DZstring5.value}
+Просьба не отключать клиента от подачи коммунальных услуг!`,
+      PU1 : `Со слов клиента ПУ  Э/Э не исправен, требуется консультация специалиста и тех. осмотр, контактный номер: ${PUstring1.value}`,
+      PU2 : `Заявка на замену ПУ Э/Э не отработана более 6 месяцев! Клиент ожидает согласование сроков замены и обратной связи, контактный номер: ${PUstring2.value}`,
+      PU3 : `Клиенту необходимо снять пломбу с ПУ ЭЭ. Контактный номер: ${PUstring3.value}`,
+    }
+      navigator.clipboard.writeText(send_mail_arr[arg])
+    }
+    //Письма
+
+        // Получаем текущую дату
+        const currentDate = new Date();
+
+        // Форматируем день и месяц с ведущими нулями
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+
+        // Форматируем дату в "дд.мм.гггг"
+        const formattedDate = `${day}.${month}.${currentDate.getFullYear()}`;
+        $('.thisDate').attr('value', formattedDate)
+    function formatDate(input) {
+        let value = input.value.replace(/\D/g, ''); // Удаляем все символы, кроме цифр
+        if (value.length > 2) value = value.slice(0, 2) + '.' + value.slice(2); // Вставляем первую точку
+        if (value.length > 5) value = value.slice(0, 5) + '.' + value.slice(5); // Вставляем вторую точку
+        input.value = value;
+    }
+  </script>
+</html>
